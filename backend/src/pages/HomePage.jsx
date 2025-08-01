@@ -1,21 +1,4 @@
 import { useState, useEffect } from "react";
-import { 
-  Target, 
-  BarChart3, 
-  RefreshCw, 
-  TrendingUp, 
-  Bell, 
-  Users, 
-  Building, 
-  CheckCircle, 
-  Zap, 
-  Star, 
-  Rocket, 
-  Play,
-  User,
-  UserCheck,
-  X
-} from "lucide-react";
 import './Home.css';
 
 // Professional Home Page Component
@@ -33,42 +16,42 @@ function HomePage({ onNavigate }) {
 
   const features = [
     {
-      icon: <Target size={48} />,
+      icon: "🎯",
       title: "Smart Task Assignment",
       description: "Intelligent task distribution based on employee skills, workload, and availability for optimal productivity."
     },
     {
-      icon: <BarChart3 size={48} />,
+      icon: "📊",
       title: "Real-time Progress Tracking",
       description: "Monitor project status with live updates, visual progress indicators, and comprehensive analytics dashboard."
     },
     {
-      icon: <RefreshCw size={48} />,
+      icon: "🔄",
       title: "Seamless Status Updates",
       description: "Employees can instantly update task status with detailed comments and file attachments for transparency."
     },
     {
-      icon: <TrendingUp size={48} />,
+      icon: "📈",
       title: "Performance Analytics",
       description: "Advanced reporting tools to analyze team performance, identify bottlenecks, and optimize workflows."
     },
     {
-      icon: <Bell size={48} />,
+      icon: "🔔",
       title: "Intelligent Notifications",
       description: "Smart alerts and reminders ensure nothing falls through the cracks with customizable notification preferences."
     },
     {
-      icon: <Users size={48} />,
+      icon: "👥",
       title: "Team Collaboration Hub",
       description: "Centralized communication platform with integrated chat, file sharing, and collaborative workspaces."
     }
   ];
 
   const stats = [
-    { number: "2,500+", label: "Active Organizations", icon: <Building size={40} /> },
-    { number: "50,000+", label: "Tasks Completed Daily", icon: <CheckCircle size={40} /> },
-    { number: "99.8%", label: "System Uptime", icon: <Zap size={40} /> },
-    { number: "4.9/5", label: "Customer Rating", icon: <Star size={40} /> }
+    { number: "2,500+", label: "Active Organizations", icon: "🏢" },
+    { number: "50,000+", label: "Tasks Completed Daily", icon: "✅" },
+    { number: "99.8%", label: "System Uptime", icon: "⚡" },
+    { number: "4.9/5", label: "Customer Rating", icon: "⭐" }
   ];
 
   const workflowSteps = [
@@ -152,14 +135,14 @@ function HomePage({ onNavigate }) {
                 onClick={() => onNavigate("signup")}
                 className="btn btn-primary btn-large"
               >
-                <Rocket className="btn-icon" size={20} />
-                 Get Started 
+                <span className="btn-icon">🚀</span>
+                 Get Start 
               </button>
               <button 
                 onClick={() => setIsVideoPlaying(true)}
                 className="btn btn-secondary btn-large"
               >
-                <Play className="btn-icon" size={20} />
+                <div className="play-icon"></div>
                 Watch Demo
               </button>
             </div>
@@ -174,7 +157,7 @@ function HomePage({ onNavigate }) {
                 className="dashboard-link manager-dash enhanced"
               >
                 <div className="dash-icon-wrapper">
-                  <User className="dash-icon" size={24} />
+                  <span className="dash-icon">👨‍💼</span>
                   <div className="dash-glow"></div>
                 </div>
                 <div className="dash-content">
@@ -188,7 +171,7 @@ function HomePage({ onNavigate }) {
                 className="dashboard-link employee-dash enhanced"
               >
                 <div className="dash-icon-wrapper">
-                  <UserCheck className="dash-icon" size={24} />
+                  <span className="dash-icon">👩‍💻</span>
                   <div className="dash-glow"></div>
                 </div>
                 <div className="dash-content">
@@ -219,7 +202,7 @@ function HomePage({ onNavigate }) {
                   </div>
                   <div className="play-overlay">
                     <div className="play-button">
-                      <Play size={24} />
+                      <span>▶</span>
                     </div>
                     <span className="play-text">Click to see interactive demo</span>
                   </div>
@@ -227,10 +210,8 @@ function HomePage({ onNavigate }) {
               ) : (
                 <div className="video-player">
                   <div className="video-header">
-                    <span>TaskFlow Pro Interactive Demo</span>
-                    <button onClick={() => setIsVideoPlaying(false)} className="close-btn">
-                      <X size={16} />
-                    </button>
+                    <span>🎬 TaskFlow Pro Interactive Demo</span>
+                    <button onClick={() => setIsVideoPlaying(false)} className="close-btn">×</button>
                   </div>
                   <div className="video-content">
                     <div className="demo-gif-container">
@@ -241,21 +222,21 @@ function HomePage({ onNavigate }) {
                       />
                     </div>
                     <div className="demo-features">
-                      <h4>Key Features Demonstrated:</h4>
+                      <h4>🎯 Key Features Demonstrated:</h4>
                       <ul>
-                        <li><Target size={16} className="inline-icon" /> <strong>Manager Dashboard:</strong> Intelligent task creation and assignment</li>
-                        <li><BarChart3 size={16} className="inline-icon" /> <strong>Employee Portal:</strong> Real-time task updates and progress tracking</li>
-                        <li><TrendingUp size={16} className="inline-icon" /> <strong>Analytics:</strong> Comprehensive performance insights and reporting</li>
-                        <li><Bell size={16} className="inline-icon" /> <strong>Notifications:</strong> Smart alerts keeping teams synchronized</li>
+                        <li>✨ <strong>Manager Dashboard:</strong> Intelligent task creation and assignment</li>
+                        <li>📱 <strong>Employee Portal:</strong> Real-time task updates and progress tracking</li>
+                        <li>📊 <strong>Analytics:</strong> Comprehensive performance insights and reporting</li>
+                        <li>🔔 <strong>Notifications:</strong> Smart alerts keeping teams synchronized</li>
                       </ul>
                     </div>
                     <div className="demo-actions">
                       <button onClick={() => onNavigate("admin")} className="demo-btn manager-btn">
-                        <User className="btn-icon" size={16} />
+                        <span className="btn-icon">👨‍💼</span>
                         Try Manager Dashboard
                       </button>
                       <button onClick={() => onNavigate("employee")} className="demo-btn employee-btn">
-                        <UserCheck className="btn-icon" size={16} />
+                        <span className="btn-icon">👩‍💻</span>
                         Try Employee Dashboard
                       </button>
                    
@@ -268,7 +249,8 @@ function HomePage({ onNavigate }) {
         </div>
       </section>
 
-      {/* How It Works Section */}
+  
+
       {/* How It Works Section */}
       <section className="workflow-section">
         <div className="container">
@@ -328,7 +310,7 @@ function HomePage({ onNavigate }) {
                 onClick={() => onNavigate("signup")}
                 className="btn btn-primary btn-large cta-primary"
               >
-                <Rocket className="btn-icon" size={20} />
+                <span className="btn-icon">🚀</span>
                 Get Started Free
               </button>
              
